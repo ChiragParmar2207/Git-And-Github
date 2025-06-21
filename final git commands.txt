@@ -1,0 +1,299 @@
+-----     ssh-keygen -t rsa -C "chigsparmar07@gmail.com"
+To create ssh key
+Home/.shh/id_rsa.pub
+
+-----     git init
+To Initialized empty Git repository in Current Folder
+
+-----     git config --global user.email <email>
+-----     git config --global user.name <user name>
+To set global username and email
+
+-----     git config user.email <email>
+-----     git config user.name <user name>
+to set local(folder) username and email
+
+-----     git config --global user.name
+-----     git config --global user.email
+to see global username and email
+
+-----     git config user.name
+-----     git config user.email
+to see local username and email
+
+-----     git config --list
+to see all configration
+
+-----     git commit --amend --author "New Author Name <New Author Email>"
+To change Author name
+(ex. git commit --amend -- author "Chirag Parmar <chigsparmar07@gmail.com>")
+
+----- git remote 
+shows how many remote repositiory are included
+
+----- git remote -v 
+shows link of git repositiory
+
+.gitignore File
+if we not want to upload file/folder in github repository put that fle/folder name 
+here(.gitignore)
+(ex. folders like node_modules)
+
+**************************************************
+-----     touch index.html
+To Create new files
+
+-----     git mv <old file name> <new file name>
+To Rename file name
+
+-----     git rm <file name>
+To delete file
+
+-----     ls -al     --> To show all files and folders.
+-----     ls -lart     --> show all hidden files and folders
+-----     git ls-files     --> To show files and folders name which is staging area
+-----     ls     --> To show all folders files and also hidden files and folders
+-----     clear  --> to clear terminal
+
+**************************************************
+-----     git clone git@github.com:ChigsParmar007/gitAndGithubPractice.git
+To add remote branch to local (clone)
+
+-----     git remote add origin https://github.com/ChigsParmar007/gitAndGithubPractice.git
+To create new repositiory in remote 001
+
+**********
+-----     git add .
+or
+-----     git add -A
+Add all files in staging area.
+
+-----     git add -p 
+it will show the file changed and ask for staging confirmation
+
+-----     git add <file name>
+Add only one file in staging area
+
+-----     git commit -m "commit message"
+Add changes in git repositiory
+
+-----     git commit --amend 
+Override the last commit
+It will change last commit message and it will aslo take changes after last commit
+
+-----     git push origin master
+or
+-----     git push
+Add git repositiory to remote repositiory
+
+
+**************************************************
+-----     git status
+To see status of git repository
+
+----- git status -s
+show modifieds files short status
+
+-----     git log
+To see log files or commits
+
+----- git log -p -5
+shows last 5 commits
+
+-----     git log --oneline
+To see commit id and message only
+
+-----     git log --oneline --graph
+To see commits in graph format
+
+----- git diff
+compare current working directory to last commit directory
+
+----- git diff --staged
+compare staging area to last commit 
+
+
+**************************************************
+Branch stand for copy of current repository.
+here default repository is (master)
+
+-----     git branch <branch name>
+To create new branch
+
+-----     git checkout <branch name>
+To switch one branch to another branch
+
+-----     git checkout -b <branch name>
+To create new branch and switch current branch to new created branch
+
+-----     git branch
+To see all local branches
+
+-----     git branch -a
+To see local and remote branches also
+
+-----     git merge <branch name>
+Merge current branch with another branch
+
+-----     git push origin <branch name>
+or
+-----     git push -u origin <branch name>sta
+To upload local branch to remote
+
+-----     git branch --delete <branch name>
+or
+-----     git branch --d <branch name>
+To delete local branch
+
+-----     git branch -D <branch name>
+To delete local branch forcefully
+
+-----     git push origin :<branch name>
+To delete remote branch using terminal
+
+-----     rm -rf .git
+To delete git(local) repository
+
+**************************************************
+
+when we made some changes in github repositiory directly 
+and then we try to push git repositiory it will shows error
+at that time we need to fetch the github repositiory and 
+pull in git repositiory.
+
+-----     git fetch
+-----     git pull origin master
+above add only remote master branch to local master branch
+-----     git pull origin <branch>
+
+adding all remote branches in git repositiory
+-----     git pull --all
+
+----- git remote set-url origin <ssh link from gihub>
+when we change repositiory name in remote(github) we need to update that name in local repositiory(git repositiory) 
+at that time we need to clone github repositiory
+
+-----     git remote -v
+shows the git repositiory username and email and repositiory name also
+
+
+**************************************************
+tag is used for download git repositiory with perticular commit id
+
+-----     git tag
+give list of tags
+
+-----     git tag <tag name> <branch name>
+to create new tag
+this create light weight tags, light weight tag assosiated with last commit message
+this will get last commit id
+
+update tags
+when we create new commit we need to light weight tag to update
+-----     git tag -f <tag name> <commit id>
+after update local tag we need to update remote tag also
+-----     git push --force origin <tag name>
+
+-----     git tag -d <tag name>
+to delete a tag
+-----     git fetch -p
+-----     git tag -d <tag name>
+when we delete tag from remote repositiory we need to fetch and than delete tag in local repositiory
+
+delete tag in both remote and local repositiory using terminal
+-----     git tag -d <tag name>
+then
+-----     git push origin :<tag name>
+
+-----    git tag -a <tag name> -m "<any message>" <commit id>
+ex. git tag -a v0.1alpha -m "Release 0.1 (alpha)' f487f11
+to create a new tag with name and message with perticular commit id
+this created anoteted tags, anoteted tags assosiated with tag message
+
+-----     git push origin <tag name>
+ex. git push origin v0.1alpha
+to upload tag in remote repositiory
+
+-----     git push --tags
+to update all tags in remote repositiory
+
+**************************************************
+-----     git stash
+Want to stash a code
+
+-----     git stash apply stash{0}
+To apply a stash
+
+-----     git stash list
+To see stash list
+
+-----     git stash show <stash id>
+To see perticular stash information
+
+-----     git stash drop
+To delete last created stash
+
+-----     git stash drop <stash id>
+To delete perticular stash
+
+-----     git stash pop
+To apply last stash and delete as well
+
+-----     git stash push -m '<message>'
+To create stash with perticular message
+
+-----     git stash clear
+to delete all stash
+
+**************************************************
+reset Command
+
+-----     git reset --soft HEAD^
+To reset undo changes to the file
+It delete commit but changes are there
+
+-----     git reset --hard HEAD^
+It delete last commit as well as delete changes.
+In short it will go to last to second commit.
+To reset undo changes and removes the assosiated files from the working directory, staging area and commit history.
+
+-----     git reset --hard HEAD~1
+it will delete all uncommited changes and all untracked files in addition to the  changes introduced in last commit.
+
+----- git checkout -f
+return all changes to last commit
+
+
+-----     git reset --hard <commit id>
+if we want to undo changes at perticular commit use this command
+we got id from (git log) command
+
+**************************************************
+-----     git branch --merged
+To see already merged branches
+
+-----     git branch --no-merged
+To see not already merged branches
+
+-----     git merge <branch name>
+To merge current branch to another branch
+
+-----     git help --all
+To see all commands list and descriptions
+
+**************************************************
+-----     git restore --staged <file name>
+It will get back staged content to working area only in perticular file
+
+-----     git restore --staged .
+It will get back staged content to working area all the files
+
+in short restore move files staging area to working area
+
+**************************************************
+-----     git rebase <branch name>
+
+
+
+if you want to pull all branches from github repository
+git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
